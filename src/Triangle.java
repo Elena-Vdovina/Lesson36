@@ -15,7 +15,7 @@ public class Triangle {
 
   public Triangle(int sideA, int sideB, int sideC) {
     if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
-      System.out.println("Не допустимое значение!");
+      System.out.println("Не допустимое значение длины стороны!");
       System.exit(1);
     }
     if (!checkSides(sideA, sideB, sideC)) {
@@ -24,27 +24,31 @@ public class Triangle {
     }
   }
 
-  public void setSideA(int sideA) {
-    this.sideA = sideA;
+  public void setSideA(int sideA){
+    this.sideA=sideA;
   }
 
-  public void setSideB(int sideB) {
-    this.sideB = sideB;
+  public void setSideB(int sideB){
+    this.sideB=sideB;
   }
 
-  public void setSideC(int sideC) {
-    this.sideC = sideC;
+  public void setSideC(int sideC){
+    this.sideC=sideC;
   }
 
-  public int getSideA() {
+  public int getSideA(){
     return sideA;
   }
 
-  public int getSideB() {
+  public int getSideB(){
     return sideB;
   }
 
-  public int getSideC() {
+  public int getSideC(){
     return sideC;
+  }
+
+  public static boolean checkSides(int a, int b, int c){
+    return ((a < b + c) && (b < a + c) && (c < a + b));
   }
 }
